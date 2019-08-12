@@ -25,7 +25,7 @@ namespace CrawlData
                 var rating = doc.DocumentNode.SelectSingleNode(
                     "//div/span/div[contains(@class, 'lemon--div__373c0__1mboc')]");
                 var address = doc.DocumentNode.SelectSingleNode(
-                    "//div/p/span[contains(@class, 'lemon--span__373c0__3997G')]");
+                    "//div[contains(@class,'lemon--div__373c0__1mboc container__373c0__19wDx u-padding-l2 border-color--default__373c0__2oFDT')]");
                 var phone = doc.DocumentNode.SelectSingleNode(
                     "//div/div/p[contains(@class, 'lemon--p__373c0__3Qnnj')]");
                 //parse data to object
@@ -34,7 +34,7 @@ namespace CrawlData
                     var responseData = new ResponseData();
                     responseData.Rating = rating.Attributes["aria-label"].Value;
                     responseData.Name = name.InnerHtml ;
-                    responseData.Address = address.InnerHtml;
+                    responseData.Address = address.InnerText.Replace(phone.InnerHtml, "");
                     responseData.Phone = phone.InnerHtml;
                     responsesData.Add(responseData);
                 }
