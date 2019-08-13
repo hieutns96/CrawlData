@@ -11,7 +11,7 @@ namespace CrawlData
             {
                 // Read a text file line by line.
                 string[] lines = File.ReadAllLines("locations.txt");//Write to a file
-                using (StreamWriter writer = new StreamWriter("data.txt"))
+                using (StreamWriter writer = new StreamWriter("data.csv"))
                 {
                     foreach (string location in lines)
                     {
@@ -28,7 +28,7 @@ namespace CrawlData
                                 Console.WriteLine(VARIABLE.Phone);
                                 Console.WriteLine(VARIABLE.Rating);
                                 Console.WriteLine("--------------------");
-                                writer.WriteLine($"{VARIABLE.Name}/{VARIABLE.Address}/{VARIABLE.Phone}/{VARIABLE.Rating}");
+                                writer.WriteLine($"{VARIABLE.Name},{VARIABLE.Address},{VARIABLE.Phone},{VARIABLE.Rating}");
                             }
                             
                             countResult = data.Length;
