@@ -36,9 +36,9 @@ namespace CrawlData
                     {
                         var responseData = new ResponseData();
                         responseData.Rating = rating?.Attributes["aria-label"]?.Value;
-                        responseData.Name = name?.InnerHtml;
-                        responseData.Address = address?.InnerText.Replace(phone.InnerHtml, "");
-                        responseData.Phone = phone?.InnerHtml;
+                        responseData.Name = name?.InnerText;
+                        responseData.Address = address?.InnerText.Replace(phone?.InnerText, "");
+                        responseData.Phone = phone?.InnerText;
                         responsesData.Add(responseData);
                     }
 

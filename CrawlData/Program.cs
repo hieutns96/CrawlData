@@ -28,7 +28,8 @@ namespace CrawlData
                                 Console.WriteLine(VARIABLE.Phone);
                                 Console.WriteLine(VARIABLE.Rating);
                                 Console.WriteLine("--------------------");
-                                writer.WriteLine($"{VARIABLE.Name},{VARIABLE.Address},{VARIABLE.Phone},{VARIABLE.Rating}");
+                                writer.WriteLine($"\"{VARIABLE.Name}\";\"{VARIABLE.Address}\";\"{VARIABLE.Phone}\";\"{VARIABLE.Rating}\"");
+                                writer.Flush();
                             }
                             
                             countResult = data.Length;
